@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng tin</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- CSS Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/stylesheet/post-news.css">
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-9 logo">
+                    <a class="fw-bold" href="post-news"> <i class="fas fa-hotel"></i> THÁI<span>review</span> </a>
+                </div>
+    
+                <div class="col-3 icons">
+                    <i id="login-btn" class="fas fa-user"></i>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-4 l-bar">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-action" id="btn-list-com">
+                            <p>Danh sách công ty</p>
+                        </li>
+                        <li class="list-group-item list-group-item-action" id="btn-add-com">
+                            <p>Thêm công ty</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-8 content">
+                    <!-- list company -->
+                    <div class="list-company active">
+
+                        <h2 class="fw-bold mt-3 mb-3 text-center">Danh sách công ty</h2>
+
+                        <table class="table table-hover">
+                            <thead>
+                                <tr class="text-center">
+                                    <th>Logo</th>
+                                    <th>Name</th>
+                                    <th>Work</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            
+                            <tr>
+                                <td class="logo">
+                                    <img src="/img/logo-izi.png" alt="logo">
+                                </td>
+                                <td class="name">IZI Software</td>
+                                <td class="work">Công ty công nghệ phần mềm</td>
+                                <td class="text-center">
+                                    <a class="update btn btn-primary" href="/update">Update</a>
+                                </td>
+                                <td class="text-center">
+                                    <form action="/delete" method="POST">
+                                        <input class="d-none" value="" name="id">
+                                        <button class="del btn btn-danger">Del</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="logo">
+                                    <img src="/img/logo-izi.png" alt="logo">
+                                </td>
+                                <td class="name">IZI Software</td>
+                                <td class="work">Công ty công nghệ phần mềm</td>
+                                <td class="text-center">
+                                    <a class="update btn btn-primary" href="/update">Update</a>
+                                </td>
+                                <td class="text-center">
+                                    <form action="/delete" method="POST">
+                                        <input class="d-none" value="" name="id">
+                                        <button class="del btn btn-danger">Del</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- add company -->
+                    <form class="add-company" action="" method="POST">
+
+                        <h2 class="fw-bold mt-3 mb-3 text-center">Thêm công ty</h2>
+                        
+                        <div class="row">
+                            <div class="form-group mt-3 col-6">
+                                <span>Tên công ty</span>
+                                <input type="text" name="tencty" class="form-control" placeholder="Công ty A" id="tencty">
+                                <span class="form-message"></span>
+                            </div>
+    
+                            <div class="form-group mt-3 col-6">
+                                <span>Fax</span>
+                                <input type="text" name="fax" class="form-control" placeholder="+84 " id="fax">
+                                <span class="form-message"></span>
+                            </div>
+    
+                            <div class="form-group mt-3 col-6">
+                                <span>Công việc</span>
+                                <input type="text" name="work" class="form-control" placeholder="Công nghệ" id="work">
+                                <span class="form-message"></span>
+                            </div>
+    
+                            <div class="form-group mt-3 col-6">
+                                <span>Website</span>
+                                <input type="text" name="website" class="form-control" placeholder="abc.com" id="website">
+                                <span class="form-message"></span>
+                            </div>
+    
+                            <div class="form-group mt-3 col-12">
+                                <span>Địa chỉ</span>
+                                <input type="text" name="address" class="form-control" placeholder="Đà Nẵng" id="address">
+                                <span class="form-message"></span>
+                            </div>
+    
+                            <div class="form-group mt-3 col-6">
+                                <span>Logo Công ty</span>
+                                <input type="file" name="logo" class="form-control" id="logo">
+                            </div>
+
+                            <div class="form-group mt-3 col-12">
+                                <span>Mô tả</span>
+                                <textarea class="form-control" name="mota" id="mota" cols="20" rows="7" placeholder="Mô tả ..."></textarea>
+                            </div>
+
+                            <div class="button mt-4 text-center">
+                                <input
+                                    id="add-btn"
+                                    class="btn btn-primary"
+                                    type="submit"
+                                    value="Add Company"
+                                />
+                            </div>
+                        </div>
+                    </form>                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript Boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- JS -->
+    <script src="/Js/post-news.js"></script>
+</body>
+</html>
